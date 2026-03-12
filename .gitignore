@@ -1,0 +1,15 @@
+# Angular
+#.idea/
+#node_modules/
+#package-lock.json
+#.angular
+#dist/
+#out-tsc/
+
+
+# Django
+DjangoProject/.idea
+DjangoProject/.venv/
+DjangoProject/.env
+DjangoProject/__pycache__/
+DjangoProject/*.py[cod]
