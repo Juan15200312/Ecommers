@@ -12,7 +12,7 @@ class LogoutSerializer(serializers.Serializer):
             token.blacklist()
             return {
                 'success': True,
-                'message': 'Se cerro la sesión con éxito'
+                'message': 'Se cerró la sesión con éxito'
             }
         except Exception:
-            raise serializers.ValidationError("Token invalido")
+            raise serializers.ValidationError("Token inválido")

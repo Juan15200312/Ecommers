@@ -9,18 +9,52 @@
             <span class="fw-light mt-1">Inicia sesión para gestionar tu tienda</span>
         </div>
 
-        <form class="mt-5">
+        <form class="mt-5" (ngSubmit)="login()" [formGroup]="formLogin">
             <div class="mb-3">
                 <label for="email" class="form-label">Correo electrónico</label>
-                <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                <input type="email"
+                       class="form-control"
+                       id="email"
+                       placeholder="name@example.com"
+                       formControlName="email"
+                       [ngClass]="isFieldInvalid('email') ? 'is-invalid' : ''"
+                >
+                @if (isFieldInvalid('email')){
+                    <div class="text-danger mt-2">
+                        @if (formLogin.get('email')?.errors?.['required']){
+                            <span>Se requiere de este campo</span>
+                        }
+                        @if (formLogin.get('email')?.errors?.['email']){
+                            <span>Correo electrónico no valido</span>
+                        }
+                    </div>
+
+                }
             </div>
 
             <div class="mb-3">
                 <label for="password" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="password" placeholder="••••••••">
+                <input type="password"
+                       class="form-control"
+                       id="password"
+                       placeholder="••••••••"
+                       formControlName="password"
+                       [ngClass]="isFieldInvalid('password') ? 'is-invalid' : ''"
+                >
+                @if (isFieldInvalid('password')){
+                    <div class="text-danger mt-2">
+                        @if (formLogin.get('password')?.errors?.['required']){
+                            <span>Se requiere de este campo</span>
+                        }
+                        @if (formLogin.get('password')?.errors?.['minlength']){
+                            <span>La contraseña debe contener al menos 8 caracteres</span>
+                        }
+                    </div>
+
+                }
             </div>
 
-            <button class="btn btn-primary w-100 mt-3">
+            <button class="btn btn-primary w-100 mt-3" [disabled]="formLogin.invalid">
                 Iniciar sesión
             </button>
         </form>

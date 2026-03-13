@@ -1,10 +1,10 @@
 # Angular
-#.idea/
-#node_modules/
-#package-lock.json
-#.angular
-#dist/
-#out-tsc/
+AngularTemplate/.idea/
+AngularTemplate/node_modules/
+AngularTemplate/package-lock.json
+AngularTemplate/.angular
+AngularTemplate/dist/
+AngularTemplate/out-tsc/
 
 
 # Django
