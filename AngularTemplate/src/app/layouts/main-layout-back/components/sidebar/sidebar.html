@@ -1,1 +1,12 @@
-<p>sidebar works!</p>
+<section class="sidebar rounded-3" [class.collapsed]="layoutService.isCollapsed()">
+
+    <button class="toggle-btn" (click)="layoutService.toggleSidebar()">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="menu-item">
+        <i class="fa-solid fa-house">
+
+        </i> <span class="text">Inicio</span>
+    </div>
+</section>

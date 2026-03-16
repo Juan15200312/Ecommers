@@ -1,0 +1,31 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 20%;
+  width: 80%;
+  height: 70px;
+  z-index: 990;
+  background-color: white;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  padding-inline-start: 1%;
+
+  transition: left 0.3s ease, width 0.3s ease;
+}
+
+.content {
+  margin-left: 20%;
+  width: 80%;
+  padding-top: 70px;
+
+  transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
+.main-layout.layout-collapsed .header {
+  left: 5%;
+  width: 95%;
+}
+
+.main-layout.layout-collapsed .content {
+  margin-left: 5%;
+  width: 95%;
+}

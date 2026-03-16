@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import {authGuard} from "./core/guards/back/auth-guard";
 
 export const routes: Routes = [
     {
@@ -16,6 +17,7 @@ export const routes: Routes = [
     {
         path: 'backoffice',
         loadComponent: () => import('./layouts/main-layout-back/main-layout-back').then((c) => c.MainLayoutBack),
+        canActivate: [authGuard],
         children: [
             {
                 path: 'home',
@@ -23,8 +25,12 @@ export const routes: Routes = [
 
             }
         ]
-    }
+    },
 
     // Cliente
+    {
+        path: 'clientes/login',
+        loadComponent: () => import('./features/cli/login/login').then((c) => c.Login),
+    }
 
 ];

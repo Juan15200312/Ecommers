@@ -1,0 +1,23 @@
+<section class="modal-backdrop" (click)="cancelar()">
+    <div class="view-content cont-white-shadow rounded-3" (click)="$event.stopPropagation()">
+        <div class="icon rounded-circle bg-{{color_primary()}} p-3">
+            <i class="{{icon()}} text-white fs-2"></i>
+        </div>
+
+        <div class="text-center">
+            <h3 class="m-0 p-0 fw-semibold">{{title()}}</h3>
+            <p class="m-0 p-0 mt-3">{{message()}}</p>
+        </div>
+
+        <div class="d-flex gap-2 mt-1">
+            @if (btn_secondary()){
+                <button class="btn btn-{{color_secondary()}} fw-semibold text-white" (click)="runEvent(eventSecondary())">
+                    {{text_btn_secondary()}}
+                </button>
+            }
+            <button class="btn btn-{{color_primary()}} fw-semibold text-white" (click)="runEvent(eventPrimary())">
+                {{text_btn_primary()}}
+            </button>
+        </div>
+    </div>
+</section>

@@ -1,3 +1,9 @@
-<app-header></app-header>
-<app-sidebar></app-sidebar>
-<app-footer></app-footer>
+<section class="main-layout" [class.layout-collapsed]="layoutService.isCollapsed()">
+    <app-sidebar></app-sidebar>
+    <div class="content">
+        <div class="header">
+            <app-header></app-header>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</section>

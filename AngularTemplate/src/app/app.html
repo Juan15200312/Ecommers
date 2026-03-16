@@ -1,1 +1,19 @@
 <router-outlet></router-outlet>
+
+
+@if (alertMessageService.show()) {
+    <app-alert-message (onClose)="alertMessageService.close()"
+                       [eventPrimary]=alertMessageService.config().eventPrimary
+                       [eventSecondary]="alertMessageService.config().eventSecondary"
+                       [btn_secondary]="alertMessageService.config().btn_secondary"
+                       [icon]="alertMessageService.config().icon"
+                       [title]="alertMessageService.config().title"
+                       [message]="alertMessageService.config().message"
+                       [color_primary]="alertMessageService.config().color_primary"
+                       [color_secondary]="alertMessageService.config().color_secondary"
+                       [text_btn_primary]="alertMessageService.config().text_btn_primary"
+                       [text_btn_secondary]="alertMessageService.config().text_btn_secondary"
+    >
+
+    </app-alert-message>
+}

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, inject, signal} from '@angular/core';
+import {LayoutService} from "../../layautService";
 
 @Component({
   selector: 'app-sidebar',
@@ -7,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './sidebar.scss',
 })
 export class Sidebar {
+  layoutService = inject(LayoutService);
 
 }

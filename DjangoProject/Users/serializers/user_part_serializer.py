@@ -7,7 +7,7 @@ class UserPartSerializer(serializers.ModelSerializer):
     image = serializers.SerializerMethodField()
     class Meta:
         model = CustomUser
-        fields = ('first_name', 'last_name', 'email', 'image')
+        fields = ('first_name', 'last_name','email', 'role' ,'image')
 
     def get_image(self, obj):
         info = getattr(obj, 'info', None)
