@@ -1,12 +1,36 @@
-<section class="sidebar rounded-3" [class.collapsed]="layoutService.isCollapsed()">
+<aside class="sidebar" [class.collapsed]="layoutService.isCollapsed()">
 
-    <button class="toggle-btn" (click)="layoutService.toggleSidebar()">
-        <i class="fa-solid fa-bars"></i>
-    </button>
+    <div class="sidebar-header">
+        <div class="logo-container c-pointer" [class.justify-content-center]="layoutService.isCollapsed()"
+             routerLink="/backoffice/home"
+        >
+            <div class="logo-icon rounded-3 bg-primary d-flex align-items-center justify-content-center flex-shrink-0">
+                <i class="fa-solid fa-shop text-white fs-5"></i>
+            </div>
 
-    <div class="menu-item">
-        <i class="fa-solid fa-house">
+            @if (!layoutService.isCollapsed()){
+                <div class="brand-text d-flex flex-column justify-content-center c-pointer">
+                    <span class="fw-semibold lh-1">E-commerce</span>
+                    <span class="fw-light mt-1" style="font-size: 0.8rem;">Administración</span>
+                </div>
+            }
+        </div>
 
-        </i> <span class="text">Inicio</span>
+        <button class="toggle-btn btn rounded-circle bg-white border border-primary d-flex align-items-center justify-content-center p-0"
+                (click)="layoutService.toggleSidebar()">
+            <i class="fa-solid text-primary"
+               [class.fa-angle-right]="layoutService.isCollapsed()"
+               [class.fa-angle-left]="!layoutService.isCollapsed()"></i>
+        </button>
     </div>
-</section>
+
+    <div class="sidebar-menu">
+        <div class="menu-item c-pointer"
+            routerLink="/backoffice/home" routerLinkActive="bg-primary bg-opacity-10 text-primary"
+        >
+            <i class="fa-solid fa-cubes"></i>
+            <span>Dashboard</span>
+        </div>
+    </div>
+
+</aside>
